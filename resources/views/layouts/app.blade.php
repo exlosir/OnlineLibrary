@@ -11,15 +11,15 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
     <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <div class="row justify-content-center text-center">
+            <div class="row justify-content-center text-center align-items-center">
                 <div class="col-4 col-xs-6 col-md-4 col-lg-4">
                     <nav class="nav">
                         <a class="nav-link" href="/">Главная</a>
-                        @auth<a class="nav-link" href="/home">Домашня страница</a>@endauth
                         <a class="nav-link" href="#">Ссылка2</a>
                     </nav>
                 </div>
@@ -30,13 +30,16 @@
                     <a href="/register" class="btn btn-outline-info">Регистрация</a>
                 </div>
                 @endguest
-                @auth
+                @auth 
+                    <a href="{{route('home')}}" class="link">Профиль</a>
                     <a href="{{route('logout')}}" class="btn btn-outline-info">Выйти</a>
                 @endauth
             </div>
         </div>
     </header>
     @yield('content')
+
+
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>
-<script src="{{ asset('js/main.js') }}"></script>
