@@ -13,9 +13,10 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('users'); //какая-то ошибка при миграции и это решает ее:D
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('username')->unique();;
+            $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('phone');
             $table->timestamp('email_verified_at')->nullable();
