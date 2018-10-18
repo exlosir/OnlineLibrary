@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $books = Book::with(['Author','Genre'])->get();
+        $books = Book::with(['Author','Genre'])->orderBy('id', 'DESC')->get();
         return view('home', ['books' => $books]);
     }
 }

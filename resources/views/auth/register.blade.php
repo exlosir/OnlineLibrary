@@ -32,8 +32,7 @@
                 </div>
                 <br>
                 <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1" style="width:200px;">Согласен с <a href="#termsModal" class="terms" data-toggle="modal">пользовательским соглашением</a> </label>
+                       <a href="#termsModal" class="terms" data-toggle="modal">Пользовательское соглашение</a> 
                         <!-- data-toggle="modal" data-target="#termsModal" -->
                 </div>
                 <input type="submit" class="btn btn-block btn-outline-success " value="Зарегистрироваться">
@@ -46,13 +45,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Terms of use</h5>
+        <h5 class="modal-title">Пользовательское соглашение</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Нажимая на галочку, ты соглашаешься продать свою почку и страну пендосам!</p>
+        <p>Регистрируясь на сайте, вы принимаете пользовательское соглашение и даете согласие на обработку персональных данных</p>
       </div>
     </div>
   </div>
