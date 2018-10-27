@@ -18,7 +18,7 @@
                 </div>
             </div> --}}
             
-            
+            {{$role}}
             <div class="card w-50" style="margin-bottom: 3rem;">
                 <div class="card-header">{{$book->name}}</div>
                 <div class="card-body">
