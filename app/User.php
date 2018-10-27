@@ -27,4 +27,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function Role_user(){
+        return $this->belongsTo('App\role_user', 'user_id', 'id');
+    }
 }
