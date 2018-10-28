@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Book;
 use App\User;
-use App\role_users;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -28,9 +28,9 @@ class HomeController extends Controller
     {
         // $role = Auth::user()->roles->name;
         $books = Book::with(['Author','Genre'])->orderBy('id', 'DESC')->get();
-        // $user = User::find(1);
-        // $role_user = role_users::with('Role', 'User')->get();
-        // dd($user->roles(-<));
-        return view('home', ['books' => $books]);
+        $user = Auth::user();
+        $role_user = $user->roles()->pluck('name');
+        // dd($user->roles()->pluck('name'));
+        return view('home', ['books' => $books, 'roles' => $role_user->first()]);
     }
 }

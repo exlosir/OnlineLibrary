@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+{{$roles}}
 <div class="container" style="margin-top:3rem;">
     @foreach($books as $book)
         <div class="row justify-content-center">
@@ -17,8 +18,6 @@
                     You are logged in!
                 </div>
             </div> --}}
-            
-            {{$role}}
             <div class="card w-50" style="margin-bottom: 3rem;">
                 <div class="card-header">{{$book->name}}</div>
                 <div class="card-body">
