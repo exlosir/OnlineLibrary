@@ -40,11 +40,7 @@ class LoginController extends Controller
     public function username() { // переопределение функции по какому полю авторизовывать пользователя
         return 'username';
     }
-
-    public function username() {
-        return 'username';
-    }
-
+    
     public function logout(Request $request)
     {
         $this->guard()->logout();
