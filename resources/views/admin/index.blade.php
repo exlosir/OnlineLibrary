@@ -22,7 +22,6 @@
                 <h2>Добро пожаловать, администратор</h2>
                 
             @endcan
-            {{-- {{$settings}} --}}
         </div>
         <h3>Name app: {{$settings->name}}</h3>
         <h3>Adress: {{$settings->adress}}</h3>

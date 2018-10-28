@@ -16,7 +16,7 @@ class AdminController extends Controller
 
     public function index() {
         $settings = SetingsApp::all()->first();
-        return view('admin.index')->with('settings',$settings);
+        return view('admin.index',['settings'=>$settings]);
     }
 
     public function saveSettings(Request $request) {
