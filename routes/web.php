@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'IndexController@Index');
+Route::get('/contact', 'IndexController@contact');
+
 
 Auth::routes();
 
