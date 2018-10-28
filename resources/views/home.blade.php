@@ -2,6 +2,9 @@
 
 @section('content')
 {{$roles}}
+@can('isAdmin')
+    Ты адмииин, урааа!
+@endcan
 <div class="container" style="margin-top:3rem;">
     @foreach($books as $book)
         <div class="row justify-content-center">

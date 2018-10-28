@@ -2,6 +2,12 @@
 
 @section('content')
 
+@if (\Session::has('error'))
+    <div class="alert alert-danger text-center">
+        {!! \Session::get('error') !!}
+    </div>
+@endif
+
     <div class="container" style="margin-top:3rem;">
         <div class="row justify-content-center">
             <div class="jumbotron block">

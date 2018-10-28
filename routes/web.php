@@ -13,21 +13,15 @@
 
 Route::get('/', 'IndexController@Index');
 
-// Route::get('/login', function(){
-//     return view('auth.login');
-// });
-
-
-// Route::get('/register', function(){
-//     return view('auth.register');
-// });
-// Route::post('/register', 'Auth\RegisterController@create');
-
 Auth::routes();
-// Route::get('/logout', function(){Auth::logout();});
+
 Route::get('/logout', function(){
     Auth::logout();
     return redirect()->back();
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'admin'], function(){
+    Route::get('/', 'AdminController@index');
+});
