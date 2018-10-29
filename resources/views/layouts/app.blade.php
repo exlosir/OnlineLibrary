@@ -22,6 +22,7 @@
                         <a class="nav-link" href="/">Главная</a>
                         <a class="nav-link" href="{{route('contact')}}">Контакты</a>
                        @can('isAdmin')<a class="nav-link" href="/admin">Админ панель</a>@endcan
+                       @can('isAdmin')<a class="nav-link" href="/admin/feedback">Обратная связь</a>@endcan
                     </nav>
                 </div>
                 <div class="col-4 col-xs-4"><span class="app-logo">Mibrary</span></div>
