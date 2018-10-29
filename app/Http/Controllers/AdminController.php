@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Gate;
 use App\SetingsApp;
+use App\feedback;
 
 class AdminController extends Controller
 {
@@ -17,6 +18,11 @@ class AdminController extends Controller
     public function index() {
         $settings = SetingsApp::all()->first();
         return view('admin.index',['settings'=>$settings]);
+    }
+
+    public function showFeedback() {
+        $feeds = feedback::all();
+        return view('admin.feedback', ['feeds'=>$feeds]);
     }
 
     public function saveSettings(Request $request) {

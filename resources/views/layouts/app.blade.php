@@ -20,6 +20,7 @@
                 <div class="col-4 col-xs-6 col-md-4 col-lg-4">
                     <nav class="nav">
                         <a class="nav-link" href="/">Главная</a>
+                        <a class="nav-link" href="{{route('contact')}}">Контакты</a>
                        @can('isAdmin')<a class="nav-link" href="/admin">Админ панель</a>@endcan
                     </nav>
                 </div>

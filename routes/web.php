@@ -12,7 +12,8 @@
 */
 
 Route::get('/', 'IndexController@Index');
-Route::get('/contact', 'IndexController@contact');
+Route::get('/contact', 'IndexController@contact')->name('contact');
+Route::post('/sendFeedback', 'IndexController@sendFeedback');
 
 
 Auth::routes();
@@ -24,7 +25,8 @@ Route::get('/logout', function(){
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'admin', 'middleware'=>['auth','admin']], function(){
     Route::get('/', 'AdminController@index');
     Route::post('/editSettings', 'AdminController@saveSettings');
+    Route::get('/feedback', 'AdminController@showFeedback');
 });
