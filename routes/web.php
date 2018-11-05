@@ -29,4 +29,24 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth','admin']], function(){
     Route::get('/', 'AdminController@index');
     Route::post('/editSettings', 'AdminController@saveSettings');
     Route::get('/feedback', 'AdminController@showFeedback');
+
+    Route::group(['prefix'=>'author'], function(){ // работа с авторами
+        Route::get('/', 'AuthorController@ShowPage');
+        Route::get('authors', 'AuthorController@ShowAllAuthors');
+        Route::post('add', 'AuthorController@Add');
+        Route::delete('authors/{id}/delete', 'AuthorController@deleteAuthor');
+    });
+
+    Route::group(['prefix'=>'genre'], function(){ // работа с жанрами
+        Route::get('/', 'GenreController@ShowPage');
+        Route::get('genres', 'GenreController@ShowAllGenres');
+        Route::post('add', 'GenreController@Add');
+    });
+
+    Route::group(['prefix'=>'post'], function(){ // работа с книгами
+        Route::get('/', 'BookController@ShowPage');
+        Route::get('books', 'BookController@ShowAllBooks');
+        Route::post('add', 'BookController@Add');
+    });
+
 });

@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
     <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    {{-- <script src="{{ asset('js/bootstrap.min.js') }}"></script> --}}
+    <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
 </head>
 <body>
     <header class="header">
@@ -21,7 +21,25 @@
                     <nav class="nav">
                         <a class="nav-link" href="/">Главная</a>
                         <a class="nav-link" href="{{route('contact')}}">Контакты</a>
-                       @can('isAdmin')<a class="nav-link" href="/admin">Админ панель</a>@endcan
+                       {{-- @can('isAdmin')<a class="nav-link" href="/admin">Админ панель</a>@endcan --}}
+                       @can('isAdmin')<div class="dropdown open">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Админ панель
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/admin">Админ панель</a>
+                                <a class="dropdown-item" href="/admin/feedback">Обратная связь</a>
+                                <a class="dropdown-item" href="/admin/author/authors">Авторы</a>
+                                <a class="dropdown-item" href="/admin/author">Добавить авторов</a>
+                                    <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/admin/genre/genres">Жанры</a>
+                                <a class="dropdown-item" href="/admin/genre">Добавить жанр</a>
+                                    <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Добавить книгу</a>
+                                {{-- <a class="dropdown-item" href="#">Separated link</a> --}}
+                            </div>
+                          </div>
+                          @endcan
                        @can('isAdmin')<a class="nav-link" href="/admin/feedback">Обратная связь</a>@endcan
                     </nav>
                 </div>
