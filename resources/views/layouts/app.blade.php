@@ -35,7 +35,7 @@
                                 <a class="dropdown-item" href="/admin/genre/genres">Жанры</a>
                                 <a class="dropdown-item" href="/admin/genre">Добавить жанр</a>
                                     <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Добавить книгу</a>
+                                <a class="dropdown-item" href="/admin/post">Добавить книгу</a>
                                 {{-- <a class="dropdown-item" href="#">Separated link</a> --}}
                             </div>
                           </div>

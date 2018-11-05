@@ -22,7 +22,9 @@
                 <div class="card-body">
                   {{-- <h5 class="card-title"></h5> --}}
                   <h6 class="card-subtitle mb-2 text-muted">Автор: {{$book->author->author_name}}</h6>
-                  <h6 class="card-subtitle mb-2 text-muted">Жанр: {{$book->genre->genre_name}}</h6>
+                  <h6 class="card-subtitle mb-2 text-muted">Жанр: {{$book->genre_name}}</h6>
+                  <h6 class="card-subtitle mb-2 text-muted">Дата создания: {{$book->created_at}}</h6>
+                  <h6 class="card-subtitle mb-2 text-muted">Дата обновления: {{$book->updated_at}}</h6>
                 </div>
               </div>
         </div>
