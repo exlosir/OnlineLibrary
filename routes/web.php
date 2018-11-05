@@ -13,6 +13,7 @@
 
 Route::get('/', 'IndexController@Index');
 Route::get('/contact', 'IndexController@contact')->name('contact');
+Route::get('/catalog', 'BookController@ShowAllBooks');
 Route::post('/sendFeedback', 'IndexController@sendFeedback');
 
 

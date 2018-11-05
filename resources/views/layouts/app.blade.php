@@ -21,6 +21,7 @@
                     <nav class="nav">
                         <a class="nav-link" href="/">Главная</a>
                         <a class="nav-link" href="{{route('contact')}}">Контакты</a>
+                        <a class="nav-link" href="/catalog">Каталог книг</a>
                        {{-- @can('isAdmin')<a class="nav-link" href="/admin">Админ панель</a>@endcan --}}
                        @can('isAdmin')<div class="dropdown open">
                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -37,9 +37,9 @@ class BookController extends Controller
         return redirect()->back()->with('success', 'Книга была успешно добавлена');
     }
 
-    public function ShowAllAuthors() {
-        $authors = Author::all();
-        return view('admin.author.authors',['authors' => $authors]);
+    public function ShowAllBooks() {
+        $books = Book::with(['Author','Genre'])->orderBy('id', 'DESC')->get();
+        return view('catalog.index',['books' => $books]);
     }
 
     public function deleteAuthor($id) {
