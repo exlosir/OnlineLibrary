@@ -41,6 +41,7 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth','admin']], function(){
         Route::get('/', 'GenreController@ShowPage');
         Route::get('genres', 'GenreController@ShowAllGenres');
         Route::post('add', 'GenreController@Add');
+        Route::delete('genres/{id}/delete', 'GenreController@deleteGenre');
     });
 
     Route::group(['prefix'=>'post'], function(){ // работа с книгами
