@@ -25,7 +25,7 @@
     </div>
 
 
-<div class="container">
+<div class="container mb-4">
     <div class="row justify-content-center">
         <form action="post/add" method="POST"  class="text-center">
             {{ csrf_field() }}
@@ -36,6 +36,13 @@
                 </div>
                 <input type="text" class="form-control" name="name_book">
             </div>
+
+            <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Ссылка на изображение книги</span>
+                    </div>
+                    <input type="text" class="form-control" name="link_for_img">
+                </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -67,7 +74,14 @@
                 <input type="text" class="form-control" name="year">
             </div>
 
-            <input type="submit" value="Добавить автора" class="btn btn-outline-success">
+            <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Полное описание книги</span>
+                    </div>
+                    <textarea name="full_text" cols="50" rows="10"></textarea>
+                </div>
+
+            <input type="submit" value="Добавить книгу" class="btn btn-outline-success">
         </form>
     </div>
 </div>
