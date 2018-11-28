@@ -10,6 +10,12 @@ body {
     background: #ecffec;
 }
 
+.img-book {
+    padding-right: 10px;
+    width: 150px;
+    height: 150px;
+}
+
 .header {
     line-height: 60px;
     background: #fff;

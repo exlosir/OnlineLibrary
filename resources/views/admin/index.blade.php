@@ -19,14 +19,18 @@
     <div class="container" style="margin-top:3rem;">
         <div class="row justify-content-center">
             @can('isAdmin')
-                <h2>Добро пожаловать, администратор</h2>
+                <h2>Добро пожаловать, <span class="text-danger h2"> администратор </span></h2>
                 
             @endcan
         </div>
-        <h3>Name app: {{$settings->name}}</h3>
-        <h3>Adress: {{$settings->adress}}</h3>
-        <h3>Phone: {{$settings->phone}}</h3>
-        <h3>Work shedule: {{$settings->work_shedule}}</h3>
+        <div class="row justify-content-center">
+            <address>
+            <h3>Name app: {{$settings->name}}</h3>
+            <h3>Adress: {{$settings->adress}}</h3>
+            <h3>Phone: {{$settings->phone}}</h3> 
+            <h3>Work shedule: {{$settings->work_shedule}}</h3>
+        </address>
+        </div>
     </div>
 <div class="container">
     <div class="row justify-content-center">

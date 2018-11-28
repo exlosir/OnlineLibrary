@@ -17,7 +17,6 @@
 @endif
 
 <div class="container" style="margin-top:3rem;">
-    @foreach($books as $book)
         <div class="row justify-content-center">
             <div class="card w-50" style="margin-bottom: 3rem;">
                 <div class="card-header">{{$book->name}}</div>
@@ -31,14 +30,11 @@
                         <h6 class=" mb-2"><b>Жанр: </b>{{$book->genre->genre_name}}</h6>
                         <h6 class=" mb-2"><b>Дата создания: </b>{{$book->created_at}}</h6>
                         <h6 class=" mb-2"><b>Дата обновления: </b>{{$book->updated_at}}</h6>
+                        {!!$book->full_text!!}
                       </div>
                   </div>
                 </div>
-                <div class="card-footer">
-                        <a href="/catalog/{{$book->id}}" class="btn btn-success">Подробнее</a>
-                </div>
               </div>
         </div>
-    @endforeach
 </div>
 @endsection

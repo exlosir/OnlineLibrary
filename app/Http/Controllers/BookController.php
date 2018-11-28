@@ -42,6 +42,11 @@ class BookController extends Controller
         return view('catalog.index',['books' => $books]);
     }
 
+    public function ShowFullBook($id) {
+        $book = Book::with(['Author','Genre'])->find($id);
+        return view('catalog.fullBook',['book'=> $book]);
+    }
+
     public function deleteAuthor($id) {
         $author = Author::find($id);
         // dd($author);
