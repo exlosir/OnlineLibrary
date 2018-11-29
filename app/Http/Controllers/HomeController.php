@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Book;
 use App\User;
+use App\Favorite;
 use Auth;
 
 class HomeController extends Controller

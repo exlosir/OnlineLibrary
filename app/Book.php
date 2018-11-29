@@ -13,4 +13,8 @@ class Book extends Model
     public function Author() {
         return $this->hasOne('App\Author', 'id', 'author_id');
     }
+
+    public function favorite() {
+        return $this->belongsToMany('App\User', 'favorites', 'book_id', 'user_id');
+    }
 }
