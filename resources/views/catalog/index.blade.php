@@ -16,11 +16,29 @@
 </div>
 @endif
 
+@if (\Session::has('warning'))
+<div class="alert alert-warning text-center">
+    {!! \Session::get('warning') !!}
+</div>
+@endif
+
 <div class="container" style="margin-top:3rem;">
     @foreach($books as $book)
         <div class="row justify-content-center">
             <div class="card w-50" style="margin-bottom: 3rem;">
-                <div class="card-header"><b>{{$book->name}}</b></div>
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-5 text-center"><b> {{$book->name}}</b></div>
+                        <div class="col-7 text-right">
+                            @auth
+                                <form action="/favorite/add/{{$book->id}}" method="POST">
+                                    {{ csrf_field() }}
+                                    <button class="btn btn-success">Добавить в избранное</button>
+                                </form>
+                            @endauth
+                        </div>
+                    </div>    
+                </div>
                 <div class="card-body clearfix">
                   <div class="row">
                       <div class="col-3">

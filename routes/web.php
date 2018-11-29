@@ -13,8 +13,14 @@
 
 Route::get('/', 'IndexController@Index');
 Route::get('/contact', 'IndexController@contact')->name('contact');
+
 Route::get('/catalog', 'BookController@ShowAllBooks');
 Route::get('/catalog/{id}', 'BookController@ShowFullBook');
+
+Route::get('/favorite', 'FavoriteController@Index');
+Route::delete('/favorite/delete/{book_id}', 'FavoriteController@DeleteFavorite');
+Route::post('/favorite/add/{book_id}', 'FavoriteController@AddToFavorite');
+
 Route::post('/sendFeedback', 'IndexController@sendFeedback');
 
 
