@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <header class="header mb-4">
+    <header class="header">
         <div class="container">
             <div class="row justify-content-center text-center align-items-center">
                 <div class="col-4 col-xs-6 col-md-4 col-lg-4">
@@ -56,16 +56,16 @@
                                 <a class="dropdown-item" href="/admin/post">Добавить книгу</a>
                             </div>
                         </div>
-                        @auth
-                        <a class="nav-link" href="/favorite">Избранные книги</a>
-                        @endauth
                         @endcan
                     </nav>
+                    @auth
+                    <a class="nav-link" href="/favorite">Избранные книги</a>
+                    @endauth
                 </nav>
 
                 @guest
-                <a href="/login" class="btn btn-outline-info">Авторизация</a>
-                <a href="/register" class="btn btn-outline-info">Регистрация</a>
+                <a href="/login" class="nav-link">Авторизация</a>
+                <a href="/register" class="nav-link">Регистрация</a>
                 @endguest
             </div>
         </div>

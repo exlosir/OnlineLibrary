@@ -27,12 +27,14 @@
             </div>
             <div class="card-body">
                 <div class="row justify-content-center">
-                    <address>
-                        <h3>Name app: {{$settings->name}}</h3>
-                        <h3>Adress: {{$settings->adress}}</h3>
-                        <h3>Phone: {{$settings->phone}}</h3>
-                        <h3>Work shedule: {{$settings->work_shedule}}</h3>
-                    </address>
+                    @if(isset($settings))
+                        <address>
+                            <h3>Name app: {{$settings->name}}</h3>
+                            <h3>Adress: {{$settings->adress}}</h3>
+                            <h3>Phone: {{$settings->phone}}</h3>
+                            <h3>Work shedule: {{$settings->work_shedule}}</h3>
+                        </address>
+                    @endif
                 </div>
             </div>
         </div>
@@ -40,22 +42,8 @@
     </div>
 </div>
 
-<!-- <div class="container" style="margin-top:3rem;">
-    <div class="row justify-content-center">
-        @can('isAdmin')
-        <h2>Добро пожаловать, <span class="text-danger h2"> администратор </span></h2>
-        @endcan
-    </div>
-    <div class="row justify-content-center">
-        <address>
-            <h3>Name app: {{$settings->name}}</h3>
-            <h3>Adress: {{$settings->adress}}</h3>
-            <h3>Phone: {{$settings->phone}}</h3>
-            <h3>Work shedule: {{$settings->work_shedule}}</h3>
-        </address>
-    </div>
-</div> -->
 
+@isset($settings)
 <div class="container mb-4">
     <div class="row justify-content-center">
         <div class="card w-50 text-center">
@@ -85,5 +73,6 @@
         </div>
     </div>
 </div>
+@endisset
 
 @endsection

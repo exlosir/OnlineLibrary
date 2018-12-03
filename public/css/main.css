@@ -27,6 +27,7 @@ html {
 .header {
     line-height: 60px;
     background: #fff;
+    /* border-bottom: 1px solid#66ff66; */
     border-bottom: 1px solid #eaeaea;
 }
 
@@ -47,7 +48,7 @@ html {
 
 .login-page {
     margin-bottom: 50px;
-    border-top: 1px solid#66ff66;
+    
 }
 
 .auth-logo {

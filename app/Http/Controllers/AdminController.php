@@ -18,8 +18,8 @@ class AdminController extends Controller
 
     public function index()
     {
-        $settings = SetingsApp::all()->first();
-        return view('admin.index', ['settings'=>$settings]);
+        $settings = SetingsApp::all()->firstOrFail();
+        return view('admin.index', compact('settings'));
     }
 
     public function showFeedback()
