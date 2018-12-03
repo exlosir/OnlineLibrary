@@ -8,6 +8,14 @@
 
 body {
     background: #ecffec;
+    /* min-height: 100vh;
+    position: relative;
+    margin: 0; */
+}
+
+html {
+    position: relative;
+    min-height: 100%;
 }
 
 .img-book {
@@ -24,7 +32,7 @@ body {
 
 .block {
     background: #fff;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .b3radius {
@@ -59,7 +67,7 @@ body {
 
 .auth-form-group {
     border: 1px solid #006600;
-    
+
 }
 
 .auth-form input {
@@ -75,4 +83,13 @@ body {
 
 .auth-form input::placeholder {
     color: #009900;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #d5d5d5;
 }

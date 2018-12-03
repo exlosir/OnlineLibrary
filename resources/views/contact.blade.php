@@ -28,7 +28,7 @@
 </div>
 
 <div class="container">
-    <div class="col-md-6 offset-md-3 mb-4" >
+    <div class="col-md-6 offset-md-3 mb-4">
         <h2 class="text-center">Здесь вы можете оставить сообщение администрации</h2>
         <form action="/sendFeedback" method="POST">
             {{ csrf_field() }}
@@ -54,7 +54,6 @@
             </div>
 
             <button type="submit" class="btn btn-primary btn-block">Отправить</button>
-
         </form>
     </div>
 </div>

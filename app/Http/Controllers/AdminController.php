@@ -9,29 +9,33 @@ use App\feedback;
 
 class AdminController extends Controller
 {
-    public function __cunstruct() {
-        if(Gate::denies('isAdmin')){
+    public function __cunstruct()
+    {
+        if (Gate::denies('isAdmin')) {
             return redirect()->back()->with('error', 'Доступ запрещен!');
         }
     }
 
-    public function index() {
+    public function index()
+    {
         $settings = SetingsApp::all()->first();
-        return view('admin.index',['settings'=>$settings]);
+        return view('admin.index', ['settings'=>$settings]);
     }
 
-    public function showFeedback() {
+    public function showFeedback()
+    {
         $feeds = feedback::all();
         return view('admin.feedback', ['feeds'=>$feeds]);
     }
 
-    public function saveSettings(Request $request) {
+    public function saveSettings(Request $request)
+    {
         $settings = SetingsApp::first();
 
         $request->validate([
             'name' => 'required',
             'adress' => 'required',
-            'phone' => 'required',
+            'phone' => 'required|max:11|min:11',
             'work_shedule' => 'required'
         ]);
 
