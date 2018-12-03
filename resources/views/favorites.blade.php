@@ -41,8 +41,6 @@
                                 <h6 class=" mb-2"><b> Автор: </b>{{$item->author->author_name}}</h6>
                                 <h6 class=" mb-2"><b>Жанр: </b>{{$item->genre->genre_name}}</h6>
                                 <h6 class=" mb-2"><b>Год написания: </b>{{$item->year}}</h6>
-                                <h6 class=" mb-2"><b>Дата создания: </b>{{$item->created_at}}</h6>
-                                <h6 class=" mb-2"><b>Дата обновления: </b>{{$item->updated_at}}</h6>
                             </div>
                         </div>
                         </div>
