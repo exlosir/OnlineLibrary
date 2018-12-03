@@ -59,6 +59,9 @@
         </div>
     </div>
     @endforeach
+    <div class="row justify-content-center" >
+            {{$books->onEachSide(2)->links()}}
+        </div>
 </div>
 
 @endsection

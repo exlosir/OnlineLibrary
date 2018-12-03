@@ -42,7 +42,7 @@ class BookController extends Controller
     }
 
     public function ShowAllBooks() {
-        $books = Book::with(['Author','Genre'])->orderBy('id', 'DESC')->get();
+        $books = Book::with(['Author','Genre'])->orderBy('id', 'DESC')->paginate(1);
         return view('catalog.index',['books' => $books]);
     }
 
