@@ -16,54 +16,57 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header mb-4">
         <div class="container">
             <div class="row justify-content-center text-center align-items-center">
-                <div class="col-6 col-xs-6 col-md-4 col-lg-4">
-                    <nav class="nav">
-                        <a class="nav-link" href="/">Главная</a>
-                        <a class="nav-link" href="{{route('contact')}}">Контакты</a>
-                        <a class="nav-link" href="/catalog">Каталог книг</a>
-                        <nav class="nav">
-                            {{-- @can('isAdmin')<a class="nav-link" href="/admin">Админ панель</a>@endcan --}}
-                            @can('isAdmin')<div class="dropdown open">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Админ панель
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="/admin">Админ панель</a>
-                                    <a class="dropdown-item" href="/admin/feedback">Обратная связь</a>
-                                    <a class="dropdown-item" href="/admin/author/authors">Авторы</a>
-                                    <a class="dropdown-item" href="/admin/author">Добавить авторов</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/admin/genre/genres">Жанры</a>
-                                    <a class="dropdown-item" href="/admin/genre">Добавить жанр</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/admin/post">Добавить книгу</a>
-                                    {{-- <a class="dropdown-item" href="#">Separated link</a> --}}
-                                </div>
-                            </div>
-                            @endcan
-                        </nav>
-                    </nav>
+                <div class="col-4 col-xs-6 col-md-4 col-lg-4">
+
                 </div>
-                <div class="col-6 col-xs-2">
+                <div class="col-4 col-xs-2">
+                    <span class="app-logo">Mibrary</span>
+                </div>
+                <div class="col-4 col-xs-4">
                     @auth
-                    <a class="nav-link" href="/favorite">Избранные книги</a>
+                    <a href="{{route('home')}}" class="btn btn-outline-info">Профиль</a>
+                    <a href="{{route('logout')}}" class="btn btn-outline-info">Выйти</a>
                     @endauth
-                    @guest
-                    <a href="/login" class="btn btn-outline-info">Авторизация</a>
-                    <a href="/register" class="btn btn-outline-info">Регистрация</a>
                 </div>
-                @endguest
-                @auth
-                <a href="{{route('home')}}" class="link">Профиль</a>
-                <a href="{{route('logout')}}" class="btn btn-outline-info">Выйти</a>
-                @endauth
             </div>
-            <div class="row">
-            <div class="col-4 col-xs-4"><span class="app-logo">Mibrary</span></div>            
+            <div class="row justify-content-center">
+                <nav class="nav">
+                    <a class="nav-link" href="/">Главная</a>
+                    <a class="nav-link" href="{{route('contact')}}">Контакты</a>
+                    <a class="nav-link" href="/catalog">Каталог книг</a>
+                    <nav class="nav">
+                        {{-- @can('isAdmin')<a class="nav-link" href="/admin">Админ панель</a>@endcan --}}
+                        @can('isAdmin')<div class="dropdown open">
+                            <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Админ панель
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/admin">Админ панель</a>
+                                <a class="dropdown-item" href="/admin/feedback">Обратная связь</a>
+                                <a class="dropdown-item" href="/admin/author/authors">Авторы</a>
+                                <a class="dropdown-item" href="/admin/author">Добавить авторов</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/admin/genre/genres">Жанры</a>
+                                <a class="dropdown-item" href="/admin/genre">Добавить жанр</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/admin/post">Добавить книгу</a>
+                            </div>
+                        </div>
+                        @auth
+                        <a class="nav-link" href="/favorite">Избранные книги</a>
+                        @endauth
+                        @endcan
+                    </nav>
+                </nav>
+
+                @guest
+                <a href="/login" class="btn btn-outline-info">Авторизация</a>
+                <a href="/register" class="btn btn-outline-info">Регистрация</a>
+                @endguest
             </div>
         </div>
     </header>
