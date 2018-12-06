@@ -10,13 +10,15 @@ use Carbon\Carbon;
 
 class BookController extends Controller
 {
-    public function ShowPage() { // отображение страницы для добавления нового автора
+    public function ShowPage()
+    { // отображение страницы для добавления нового автора
         $authors = Author::all();
         $genres = Genre::all();
         return view('admin.post.index', ['genres'=>$genres, 'authors'=>$authors]);
     }
 
-    public function Add(Request $request) { // добавление нового автора
+    public function Add(Request $request)
+    { // добавление нового автора
         $request->validate([
             'name_book'=>'required',
             'link_for_img'=>'required',
@@ -41,17 +43,20 @@ class BookController extends Controller
         return redirect()->back()->with('success', 'Книга была успешно добавлена');
     }
 
-    public function ShowAllBooks() {
-        $books = Book::with(['Author','Genre'])->orderBy('id', 'DESC')->paginate(1);
-        return view('catalog.index',['books' => $books]);
+    public function ShowAllBooks()
+    {
+        $books = Book::with(['Author','Genre'])->orderBy('id', 'DESC')->paginate(4);
+        return view('catalog.index', ['books' => $books]);
     }
 
-    public function ShowFullBook($id) {
+    public function ShowFullBook($id)
+    {
         $book = Book::with(['Author','Genre'])->find($id);
-        return view('catalog.fullBook',['book'=> $book]);
+        return view('catalog.fullBook', ['book'=> $book]);
     }
 
-    public function deleteAuthor($id) {
+    public function deleteAuthor($id)
+    {
         $author = Author::find($id);
         // dd($author);
         $author->delete();

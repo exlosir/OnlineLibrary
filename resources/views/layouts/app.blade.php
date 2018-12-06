@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header mb-4">
         <div class="container">
             <div class="row justify-content-center text-center align-items-center">
                 <div class="col-4 col-xs-6 col-md-4 col-lg-4">
