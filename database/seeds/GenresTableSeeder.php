@@ -12,7 +12,7 @@ class GenresTableSeeder extends Seeder
     public function run()
     {
         DB::table('genres')->insert([
-            'genre_name' => str_random(10)
+            'genre_name' => 'Поэзия'
         ]);
     }
 }

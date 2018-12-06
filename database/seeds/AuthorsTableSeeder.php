@@ -12,7 +12,10 @@ class AuthorsTableSeeder extends Seeder
     public function run()
     {
         DB::table('authors')->insert([
-            'author_name' => str_random(10)
+            'author_name' => 'Александр Сергеевич Пушкин'
+        ]);
+        DB::table('authors')->insert([
+            'author_name' => 'Сергей Александрович Есенин'
         ]);
     }
 }
